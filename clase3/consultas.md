@@ -60,3 +60,44 @@
       FROM destinos  
       ORDER BY idRegion, precio;
 
+### Filtrado de resultados
+
+> Filtrar resultados de una consulta significa traer solamente los registros que cumplan con una condición dada.
+> Para implementar un filtro utilizamos la palabra reservada
+> **WHERE** seguida de la condición
+
+    SELECT colunma2, columna4  
+      FROM nombreTabla  
+      WHERE condicion;  
+
+> Traer datos de los destinos con un precio hasta 8400
+
+    SELECT aeropuerto, precio   
+      FROM destinos  
+      WHERE precio <= 8400;  
+
+> Traer datos de los destinos con un precio entre 6600 y 8400
+
+    SELECT aeropuerto, precio  
+      FROM destinos  
+      WHERE precio BETWEEN 6600 AND 8400;  
+
+    SELECT aeropuerto, precio  
+      FROM destinos  
+      WHERE precio >= 6600  
+      AND precio <= 8400;  
+
+> Traer datos de personas con fecha de alta de los años 2005 y 2006
+
+    select * from personas   
+      where alta >= "2005-01-01"  
+      and alta <= "2006-12-31";  
+
+    select * from personas 
+      where alta BETWEEN '2005-01-01' and '2006-12-31';
+
+    select * from personas 
+      where YEAR(alta) BETWEEN 2005 and 2006;
+
+    select * from personas
+      where YEAR(alta) IN(2005, 2006);
