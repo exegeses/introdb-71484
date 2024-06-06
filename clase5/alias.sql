@@ -6,12 +6,13 @@
     Implementamos un alias con la palabra AS (se puede omitir)
 */
 
-SELECT prdNombre AS Producto,
-       prdPrecio AS 'Precio contado',
-       mkNombre AS Marca,
-       catNombre AS Categoría
-  FROM productos
-  JOIN marcas
-    ON productos.idMarca = marcas.idMarca
-  JOIN categorias
-    ON productos.idCategoria = categorias.idCategoria;
+SELECT 	prdNombre AS Producto,
+          prdPrecio AS 'Precio contado',
+          prdPrecio * 1.05 AS 'Precio Lista',
+          mkNombre AS Marca,
+          catNombre AS Categoría
+    FROM productos
+     JOIN marcas
+          ON productos.idMarca = marcas.idMarca
+     JOIN categorias
+          ON productos.idCategoria = categorias.idCategoria;
